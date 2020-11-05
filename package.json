@@ -1,9 +1,9 @@
 {
   "name": "Cloudcomputing",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "62.1.mvc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node 62.1.mvc.js"
   },
   "keywords": [],
   "author": "",
