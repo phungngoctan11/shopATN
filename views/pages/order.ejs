@@ -8,6 +8,7 @@
         <header>
             <%- include ('../template/header', { username: null, configHeader: configHeader, currpage : currpage  }); %>
         </header>
+        
 
         <main>
             <div class="container"  >
@@ -39,15 +40,25 @@
                                 <td style="vertical-align:middle;align-items: center ;"><%=itemlist[item].qty%></td>
                                 <td style="vertical-align:middle;align-items: center ;"><%=itemlist[item].price%></td>
                                 <td style="vertical-align:middle;align-items: center ;"><%=itemlist[item].total%></td>
+                                   
                                 
-                            </tr>                   
+                            </tr>    
+                           
+
+                              
                         <% }); %>
                         <% }%>
+                        
                         </tbody>
                     </table>
+                    
                 </div>
 
             </div>
+            <div class="total">
+                <p> Sum </p>
+                <%=Object.keys(itemlist).reduce((acc, curr) => acc + Number.parseInt(itemlist[curr].total),0)%>
+                </div>
         </main>
           
         
