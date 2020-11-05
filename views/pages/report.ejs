@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title  } ); %>
+    </head>
+    <body>
+        
+ 
+        <form action="" id="profile">
+ 
+            <p>Sex:</p>
+          
+            <input type="radio" name="sex" value="male">Shop1<br>
+          
+            <input type="radio" name="sex" value="female">Shop2<br>
+          
+            <p>Country:</p>
+          
+            <input type="radio" name="country" value="Viet Nam">Item1<br>
+          
+            <input type="radio" name="country" value="Australia">Item2<br>
+            <input type="radio" name="country" value="USA">Item3<br>
+          
+            <br>
+          
+            <input type="button" onclick="myFunction()" value="Check">
+          
+         </form>
+       
+         
+        <header>
+            <%- include ('../template/header', { username: null , configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+
+        
+
+
+</body>
+
+</html> 
