@@ -7,6 +7,8 @@ router.use(function timeLog (req, res, next) {
     next();
 })
 
+const dbname = 'shop';
+const uri = 'mongodb+srv://admin:admin@cluster0.szsai.mongodb.net/shop?retryWrites=true&w=majority';
 /// ..................................................
 router.get('/product', productPage);
 

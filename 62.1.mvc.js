@@ -1,3 +1,4 @@
+
 /// INSTALL
 /// npm install express  body-parser  cookie-parser multer ejs mongodb mongoose  express-session cookie-session qrcode  qrcode-svg  --save
 
@@ -22,7 +23,7 @@ var atob = require('atob');
 /// ------------------ CONFIG
 var configHeader = require("./configs/config_Header");
 var configDB = require("./configs/config_DB");
-const PORT = process.env.PORT || 8080;
+const PORT = 8081;
 var urldb = configDB.localdb.urldb;
 
 
@@ -181,7 +182,7 @@ function createUserPage(req, res) {
                 password : req.query.password.trim()
             };
             session.user = accsubmit;
-            libDB.res_insertDB(MongoClient, urldb, "newshop", "user",
+            libDB.res_insertDB(MongoClient, urldb, "shop", "user",
                 accsubmit, "pages/user_create", {title: "ATN-Shop create USER page" , configHeader: configHeader , currpage: "create User"}, "Notify", res );
             console.log("\t create ", accsubmit);
         } else {
@@ -213,8 +214,19 @@ function loginPage(req, res) {
         console.log("\t login ", req.session);
     }
 }
+///...............................................
+app.get('/report', Reportpage);
+function Reportpage(req, res) {
+    
+    res.render("pages/report", {
+        title: "ATN-Shop ORDER page",
+        configHeader: configHeader, 
+        currpage: "report"  });
+    }
+
 
 /// ..................................................
+
 app.get('/logout', logoutPage);
 function logoutPage(req, res) {
     session.user = null;
@@ -350,7 +362,7 @@ function qrPage(req, res) {
 /// ------------------ gọi SERVER thực thi
 
 
-var server = app.listen( process.env.PORT , function () {
+var server = app.listen( PORT , function () {
    var host = server.address().address
    var port = server.address().port
    
